@@ -3,9 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'reac
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
-// export default function App() {
-  const App = () => {
+export default function App() {
+  // const App = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
