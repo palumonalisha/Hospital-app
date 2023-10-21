@@ -5,20 +5,25 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './src/auth/Login';
 import Edit from './src/auth/Edit';
 import ForgotPassword from './src/auth/ForgotPassword';
+// import homescreen from './src/auth/homescreen';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
   
+  
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" component={Login} />
-           <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> 
-           <Stack.Screen name="Edit" component={Edit} />  
+        
+         <Stack.Navigator initialRouteName="Login"> 
+          <Stack.Screen name="Login" component={Login} /> 
+           {/* <Stack.Screen name="homescreen" component={homescreen} /> */}
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword} /> 
+           <Stack.Screen name="Edit" component={Edit} />
+           {/* <Stack.Screen name="homescreen" component={homescreen} />      */}
 
-        </Stack.Navigator> 
-      </NavigationContainer>
+       </Stack.Navigator> 
+       </NavigationContainer>
 
 
 
