@@ -1,106 +1,115 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-// import { Image } from './src/images/user.png';
-// import { Image } from './user.png';
-
-// const Edit = ({ navigation }) => {
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { cloneDeep } from 'lodash/lang'
+// import Icon from 'react-native-vector-icons/AntDesign';
 
 function Edit({ navigation }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [Conformpassword, setConformPassword] = useState('');
-  const [password, setPassword] = useState('');
-  const [Position, setPosition] = useState('');
-  const [Speciality, setSpeciality] = useState('');
-
-  // const imageSource = require('./user.png');
-
-  // const [selectedValue, setSelectedValue] = useState('option1'); // Set the default selected value
-  // const options = [
-  //   { label: 'Option 1', value: 'option1' },
-  //   { label: 'Option 2', value: 'option2' },
-  //   { label: 'Option 3', value: 'option3' },
-  // ];
+  const [update, setUpdate] = useState({
+    name: '',
+    email: '',
+    Conformpassword: '',
+    password: '',
+    position: '',
+    speciality: ''
+  })
 
   return (
     <View style={Styles.container}>
-      {/* <Image
-        source={imageSource}
-        style={{ width: 50, height: 50 }}
-      /> */}
+      <Icon
+        name='user-circle'
+        type="FontAwesome6"
+        size={57}
+        color='#B4B4B4'
+        // color='##ECECEC'
+        marginBottom={10}
+      />
 
-      <Image
-        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8DADmDljcwU5JX9oJ7hAAIk8Z4DJgEZviLA&usqp=CAU' }}
-        style={{ width: 47, height: 47, marginBottom: 10, resizeMode: 'contain' }}
+      <Icon
+        name='plus-circle'
+        // type="AntDesign"
+        size={31}
+        marginLeft={100}
+        iconContainerStyle={{ position: 'absolute', left: 100, top: 300 }}
+        style={Styles.Icon}
 
       />
 
       <Text style={Styles.header}> Profile</Text>
+
       <TextInput
         style={Styles.input}
         placeholder="name"
-        onChangeText={setName}
-        value={name}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.name = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.name}
       />
+
       <TextInput
         style={Styles.input}
         placeholder="Email"
-        onChangeText={setEmail}
-        value={email}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.email = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.email}
       />
+
       <TextInput
         style={Styles.input}
         placeholder="Password"
         secureTextEntry={true}
-        onChangeText={setPassword}
-        value={password}
-      />
-      <TextInput
-        style={Styles.input}
-        placeholder="Conformpassword"
-        secureTextEntry={true}
-        onChangeText={setConformPassword}
-        value={Conformpassword}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.password = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.password}
       />
 
-      {/* <Text>Select an option:</Text> */}
+      <TextInput
+        style={Styles.input}
+        placeholder="ConfirmPassword"
+        secureTextEntry={true}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.confirmPassword = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.confirmPassword}
+      />
 
       <TextInput
         style={Styles.input}
         placeholder="Position"
         color='#000000'
-        onChangeText={setPosition}
-        value={Position}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.position = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.position}
       />
 
       <TextInput
         style={Styles.input}
         placeholder="Select your speciality"
-        onChangeText={setSpeciality}
-        value={Speciality}
+        onChangeText={(value) => {
+          const UpdatedDetails = cloneDeep(update)
+          UpdatedDetails.speciality = value
+          setUpdate(UpdatedDetails)
+        }}
+        value={update.speciality}
       />
 
-      <Text style={{
-        fontSize: 14,
-        color: '#545454',
-        marginTop: 10,
-        marginBottom: 20,
-        marginRight: 50,
-      }}>
-        Update Your Profile Latest Information</Text>
-
-
-      {/* <Picker style={Styles.Picker}
-        selectedValue={selectedValue}
-        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-      >
-        {options.map(option => (
-          <Picker.Item key={option.value} label={option.label} value={option.value} />
-        ))}
-      </Picker>  */}
-
-      <TouchableOpacity style={Styles.loginButton} onPress={() => navigation.navigate('homescreen')} >
+      <Text style={{ fontSize: 14, color: '#545454', marginTop: 10, marginBottom: 20, marginRight: 50, }}>
+        Update Your Profile Latest Information
+      </Text>
+      <TouchableOpacity style={Styles.loginButton} onPress={() => navigation.navigate('homeScreen')} >
         <Text style={Styles.loginButtonText}>Submit</Text>
       </TouchableOpacity>
 
@@ -145,7 +154,6 @@ const Styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 5,
     borderRadius: 5,
-
     // borderColor:'#BDBDBD',
   },
 
@@ -166,9 +174,17 @@ const Styles = StyleSheet.create({
     marginBottom: 20,
     color: '#000000',
     paddingTop: 8,
+  },
 
 
-  }
+  Icon: {
+    color: '#0079D0',
+    alignSelf: 'right',
+    alignItem: 'right',
+    position: 'absolute',
+    left: 105,
+    top: 110
+  },
 
 });
 
