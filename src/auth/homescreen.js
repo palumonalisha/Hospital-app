@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
 import Icons from 'react-native-vector-icons/MaterialIcons';
+import Iconses from 'react-native-vector-icons/FontAwesome6';
+// import  TabNavigation from './src/auth/TabNavigation';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import homeStyle from './src/Styles/homeStyle';
 
@@ -33,53 +35,293 @@ function homeScreen({ navigation }) {
       </View>
 
       <View style={Styles.dateRange} >
+      <View style={Styles.date} >
+      <Text style={{ position: 'absolute', bottom: 5, left: 7 }} >05/05/2023</Text>
+        <Iconses
+          name="calendar"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{  position: 'absolute', bottom: 5, left: 30 }}
+        />
+       
+        <Text style={{  position: 'absolute', bottom: 5, left: 155 }} >06/06/2023</Text>
+
+        <Iconses
+          name="calendar"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+           style={{  position: 'absolute', bottom: 5, left: 165 }} 
+        />
+       
+       </View>
+       
       </View>
+      
 
       <View style={Styles.Recently}>
         <Text style={{ fontSize: 16, color: 'white' }}>Recently Operated </Text>
       </View>
 
       <View style={Styles.patientDetails} ><></>
-        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 200, marginTop: 40, }}> HID-123456789012</Text>
-        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, }}> Aysha Ifra</Text>
-        <Text style={{ color: 'black', fontSize: 11, marginRight: 100 }}> Ear problem problem</Text>
-        <Text style={{ color: 'black', fontSize: 11, marginLeft: 100, marginBottom: 4 }}>Today</Text>
-
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>Today</Text>
         <Icon
           name="user-circle-o"
-          size={31}
+          size={28}
           color='#0079D0'
           marginLeft='500'
-          style={{ marginRight: 300, marginBottom: 30 }}
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
         />
-        <Text style={{ color: '#0A7908', fontSize: 11, marginRight: 200, marginBottom: 0 }}>Discharged</Text>
-
+        <Text style={{ color: '#0A7908', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Discharged</Text>
         <Icons
-          name="mode-edit-outline"
+          name="edit"
           size={21}
           color='#0079D0'
           marginLeft='500'
-          style={{ marginLeft: 250, }}
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
         />
-
         <Icons
           name="bookmark"
           size={21}
           color='#0079D0'
           marginLeft='500'
-          style={{ marginLeft: 250, }}
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
         />
-
         <Icon
           name='circle'
           // type="AntDesign"
           size={11}
           color='#4BE85A'
-          iconContainerStyle={{ position: 'absolute', left: 150, top: 500, color: '#4BE85A' }}
-          style={Styles.Icon}
-
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
         />
       </View>
+      
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>Yesterday</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#8F720B', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Warding</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#F9F136'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>03/03/23</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#F8762D', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Missing</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#F8762D'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+
+
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>03/03/23</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#8F720B', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Warding</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#F9F136'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>03/04/23</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#0A7908', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Discharged</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#4BE85A'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>00/00/00</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#8F0B0B', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Death</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#FA0D0D'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+      <View style={Styles.patientDetails} ><></>
+        <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
+        <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
+        <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>03/04/23</Text>
+        <Icon
+          name="user-circle-o"
+          size={28}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
+        />
+        <Text style={{ color: '#0A7908', fontSize: 11, fontWeight:'bold',marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Discharged</Text>
+        <Icons
+          name="edit"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
+        />
+        <Icons
+          name="bookmark"
+          size={21}
+          color='#0079D0'
+          marginLeft='500'
+          style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
+        />
+        <Icon
+          name='circle'
+          // type="AntDesign"
+          size={11}
+          color='#4BE85A'
+          style={{ position: 'absolute', left: 35, bottom: 18 }}
+        />
+      </View>
+     
+    
+
+      
+
+      
+      {/* <TabNavigation/> */}
+
 
     </View>
 
@@ -104,7 +346,7 @@ const Styles = StyleSheet.create({
     color: '#000000',
     justifyContent: 'center',
     alignItems: 'left',
-    paddingHorizontal: 13,
+    paddingHorizontal: 12,
 
   },
 
@@ -116,9 +358,19 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20
-
-
   },
+  date: {
+    width:256,
+    height:28,
+    backgroundColor: '#fffF',
+    Border:'#0079D0',
+    justifyContent: 'center',
+   
+    marginBottom: 3,
+    borderColor:'#0079D0',
+    borderRadius:5,
+  },
+
   alan: {
     color: 'black',
     fontSize: 17,
@@ -140,13 +392,13 @@ const Styles = StyleSheet.create({
     marginTop: 0
   },
   patientDetails: {
-    width: 337,
-    height: 60,
+    width: 365,
+    height: 50,
     backgroundColor: '#ffff',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
-    marginHorizontal: 26,
+    marginHorizontal: 14,
     justifyContent: 'center',
     borderRadius: 5,
     shadowColor: '#0079D0',
