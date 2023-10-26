@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
 import Icons from 'react-native-vector-icons/MaterialIcons';
-import Iconses from 'react-native-vector-icons/FontAwesome6';
+// import Iconses from 'react-native-vector-icons/FontAwesome6';
 // import  TabNavigation from './src/auth/TabNavigation';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import homeStyle from './src/Styles/homeStyle';
@@ -21,7 +21,7 @@ function homeScreen({ navigation }) {
           color='#0079D0'
         // backgroundColor="#4A99E9"
         >
-          <Text style={{ color: 'black', fontSize: 16, }}> Surgical directory</Text>
+          <Text style={{ color: 'black', fontSize: 16,  }}> Surgical directory</Text>
         </Icon>
       </View>
 
@@ -37,22 +37,24 @@ function homeScreen({ navigation }) {
       <View style={Styles.dateRange} >
       <View style={Styles.date} >
       <Text style={{ position: 'absolute', bottom: 5, left: 7 }} >05/05/2023</Text>
-        <Iconses
+        <Icon
           name="calendar"
-          size={21}
+          size={14}
           color='#0079D0'
           marginLeft='500'
-          style={{  position: 'absolute', bottom: 5, left: 30 }}
+          style={{  position: 'absolute', bottom: 7, left: 92 }}
         />
-       
-        <Text style={{  position: 'absolute', bottom: 5, left: 155 }} >06/06/2023</Text>
 
-        <Iconses
+        <Text style={{  position: 'absolute', bottom: 5, left: 124,fontWeight:'Bold' }} >To</Text>
+       
+        <Text style={{  position: 'absolute', bottom: 5, left: 153 }} >06/06/2023</Text>
+
+        <Icon
           name="calendar"
-          size={21}
+          size={14}
           color='#0079D0'
           marginLeft='500'
-           style={{  position: 'absolute', bottom: 5, left: 165 }} 
+           style={{  position: 'absolute', bottom: 7, left : 236 }} 
         />
        
        </View>
@@ -86,7 +88,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -122,7 +124,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -158,7 +160,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -195,7 +197,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -230,7 +232,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -266,7 +268,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -301,7 +303,7 @@ function homeScreen({ navigation }) {
         />
         <Icons
           name="bookmark"
-          size={21}
+          size={20}
           color='#0079D0'
           marginLeft='500'
           style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
@@ -314,14 +316,6 @@ function homeScreen({ navigation }) {
           style={{ position: 'absolute', left: 35, bottom: 18 }}
         />
       </View>
-     
-    
-
-      
-
-      
-      {/* <TabNavigation/> */}
-
 
     </View>
 
