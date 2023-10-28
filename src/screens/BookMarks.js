@@ -12,20 +12,20 @@ function BookMarks({ navigation }) {
 
     return (
         <View style={{ backgroundColor: 'white', flex: 1, }}>
-             <View style={Styles.header} >
-        <Icon
-          name="chevron-left"
-          size={16}
-          color='#777777'
-          style={{ position:'absolute',left:22 ,bottom:10,backgroundColor: '#F6F6F6',}}
-        // backgroundColor="#4A99E9"
-        >
-        </Icon>
-          
-          <Text style={{ color: 'black', fontSize: 16,fontWeight:'bold', marginBottom:25,position:'absolute',left:55 }}> Book Mark</Text>
-         
-        
-      </View>
+            <View style={Styles.header} >
+                <Icon
+                    name="chevron-left"
+                    size={16}
+                    color='#777777'
+                    style={{ position: 'absolute', left: 22, bottom: 10, backgroundColor: '#F6F6F6', }}
+                // backgroundColor="#4A99E9"
+                >
+                </Icon>
+
+                <Text style={{ color: 'black', fontSize: 16, fontWeight: 'bold', marginBottom: 25, position: 'absolute', left: 55 }}> Book Mark</Text>
+
+
+            </View>
 
 
             <View style={Styles.patientDetails} >
@@ -385,13 +385,13 @@ function BookMarks({ navigation }) {
                     style={{ position: 'absolute', left: 35, bottom: 18 }}
                 />
             </View>
-            
+
 
             <View style={Styles.TextStyle} >
 
             </View>
 
-            
+
         </View>
 
     );

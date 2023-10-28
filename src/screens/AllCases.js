@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
@@ -9,45 +9,84 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
+
 function AllCases({ navigation }) {
 
+    // constructor()
+    // {
+    //     super()
+    //     this.state = {
+    //         show: false
+
+    //     }
+
+    // }
+
+
+
+    //     constructor(props)
+    // {
+    //     super(props)
+    //     this.state={
+    //         show:false
+
+    //     }
+
+    // }
+
+    // show=() =>{
+    //     this.setState({show:true})
+
+    // }
+
+    // close=() =>{
+    //     this.setState({show:false})
+    // }
+
+
+    // let{show}=this.state
+
     return (
+
         <View style={{ backgroundColor: 'white', flex: 1, }}>
-             <View style={Styles.header} >
-        <Icon
-          name="chevron-left"
-          size={16}
-          color='#777777'
-          style={{ position:'absolute',left:22 ,bottom:10,backgroundColor: '#F6F6F6',}}
-        // backgroundColor="#4A99E9"
-        >
-        </Icon>
-          <Text style={{ color: 'black', fontSize: 16,fontWeight:'bold', marginBottom:25,position:'absolute',left:55 }}> All Cases</Text>
-         
-      </View>
+            <View style={Styles.header} >
+                <Icon
+                    name="chevron-left"
+                    size={16}
+                    color='#777777'
+                    style={{ position: 'absolute', left: 22, bottom: 10, backgroundColor: '#F6F6F6', }}
+                // backgroundColor="#4A99E9"
+                >
+                </Icon>
+                <Text style={{ color: 'black', fontSize: 16, fontWeight: 'bold', marginBottom: 25, position: 'absolute', left: 55 }}> All Cases</Text>
 
-      <View>
-        <SafeAreaView style={{marginHorizontal:20,}}> 
-        <TextInput
-        placeholder='Search'
-        clearButtonMode="always"
-        style={Styles.searchBox}
-        />
-         </SafeAreaView>
-         {/* <View>   */}
-        <Icons
-          name="search"
-          size={21}
-          color='#545454'
-          marginLeft='500'
-          style={{ marginLeft: 50, position: 'absolute', 
-          top: 37, left: 300 }}
-        />
-      </View>
+            </View>
+
+            <View>
+                <SafeAreaView style={{ marginHorizontal: 20, }}>
+                    <TextInput
+                        placeholder='Name/BHT/Health ID  '
+                        clearButtonMode="always"
+                        style={Styles.searchBox}
+                    />
+                </SafeAreaView>
+
+                <Icons
+                    name="search"
+                    size={21}
+                    color='#B3B3B3'
+                    marginLeft='500'
+                    style={{
+                        marginLeft: 50, position: 'absolute',
+                        top: 37, left: 300
+                    }}
+                />
+            </View>
+            <Text style={{ color: 'black', fontSize: 13, fontWeight: 'bold', position: 'absolute', right: 16, top: 112 }} onPress={() => this.setState({ show: true })} > Advanced Search </Text>
 
 
-            {/* <View style={Styles.patientDetails} >
-          
+            <View style={Styles.patientDetails} >
+
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -83,7 +122,7 @@ function AllCases({ navigation }) {
                 />
             </View>
 
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -119,7 +158,7 @@ function AllCases({ navigation }) {
                 />
             </View>
 
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -157,7 +196,7 @@ function AllCases({ navigation }) {
             </View>
 
 
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -192,43 +231,9 @@ function AllCases({ navigation }) {
                     style={{ position: 'absolute', left: 35, bottom: 18 }}
                 />
             </View>
-            <View style={Styles.patientDetails} ><></>
-                <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
-                <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
-                <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
-                <Text style={{ color: 'black', fontSize: 12, marginLeft: 100, marginBottom: 4, position: 'absolute', left: 152, bottom: 6 }}>03/04/23</Text>
-                <Icon
-                    name="user-circle-o"
-                    size={28}
-                    color='#0079D0'
-                    marginLeft='500'
-                    style={{ marginRight: 300, marginTop: 30, position: 'absolute', left: 15, bottom: 18 }}
-                />
-                <Text style={{ color: '#0A7908', fontSize: 11, fontWeight: 'bold', marginRight: 200, position: 'absolute', bottom: 2, left: 10 }}>Discharged</Text>
-                <Icons
-                    name="edit"
-                    size={21}
-                    color='#0079D0'
-                    marginLeft='500'
-                    style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 59 }}
-                />
-                <Icons
-                    name="bookmark"
-                    size={20}
-                    color='#0079D0'
-                    marginLeft='500'
-                    style={{ marginLeft: 250, position: 'absolute', bottom: 8, left: 88 }}
-                />
-                <Icon
-                    name='circle'
-                    // type="AntDesign"
-                    size={11}
-                    color='#4BE85A'
-                    style={{ position: 'absolute', left: 35, bottom: 18 }}
-                />
-            </View>
 
-            <View style={Styles.patientDetails} >
+
+            <View style={Styles.patientDetails1} >
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -263,7 +268,7 @@ function AllCases({ navigation }) {
                     style={{ position: 'absolute', left: 35, bottom: 18 }}
                 />
             </View>
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -298,7 +303,7 @@ function AllCases({ navigation }) {
                     style={{ position: 'absolute', left: 35, bottom: 18 }}
                 />
             </View>
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -333,7 +338,7 @@ function AllCases({ navigation }) {
                     style={{ position: 'absolute', left: 35, bottom: 18 }}
                 />
             </View>
-            <View style={Styles.patientDetails} ><></>
+            <View style={Styles.patientDetails1} ><></>
                 <Text style={{ color: 'black', fontSize: 11, fontWeight: 'bold', marginLeft: 238, marginBottom: 28 }}> HID-123456789012</Text>
                 <Text style={{ color: 'black', fontSize: 12, fontWeight: 'bold', marginRight: 100, marginTop: 23, position: 'absolute', left: 80, bottom: 28 }}> Aysha Ifra</Text>
                 <Text style={{ color: 'black', fontSize: 12, marginRight: 100, position: 'absolute', left: 80, bottom: 10 }}> Ear problem problem</Text>
@@ -369,12 +374,70 @@ function AllCases({ navigation }) {
                 />
             </View>
 
+            <Modal
 
-            <View style={Styles.TextStyle} >
+                transparent={true}
+                visible={this.state.show}
+            // visible={true}
+            >
 
-            </View> */}
+                <View style={{ backgroundColor: "#000000aa", flex: 1 }}>
+                    <View style={{ backgroundColor: "#ffff", margin: 40, padding: 14, borderRadius: 5, marginTop: 120, flex: 1, marginBottom: 5, width: 311, height: 643 }}>
+                        <Text style={{ fontSize: 14, fontWeight: 'bold' }}> Advance search </Text>
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 5, padding: 5, }}>Name </Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Health Id </Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>BHT </Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Gender </Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Age</Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Comorbidities</Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Patient mobile number</Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>District</Text>
+                        <TextInput style={Styles.textInput}
+                        />
+                        <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, }}>Date</Text>
+                        <TextInput style={Styles.textInput1}
+                        />
 
-            
+                        <Text style={{ position: 'absolute', bottom: 45, left: 27, fontWeight: 'bold', fontSize: 14 }} >From</Text>
+                        <Icon
+                            name="calendar"
+                            size={10}
+                            color='#0079D0'
+                            marginLeft='500'
+                            style={{ position: 'absolute', bottom: 49, left: 122 }}
+                        />
+
+                        <Text style={{ position: 'absolute', bottom: 45, left: 154, fontSize: 14, fontWeight: 'bold', }} >To</Text>
+
+                        <Icon
+                            name="calendar"
+                            size={10}
+                            color='#0079D0'
+                            marginLeft='500'
+                            style={{ position: 'absolute', bottom: 49, left: 266 }}
+                        />
+                    </View>
+
+
+                </View>
+
+            </Modal>
+
+
         </View>
 
     );
@@ -403,19 +466,48 @@ const Styles = StyleSheet.create({
     },
 
     searchBox: {
-        paddingHorizontal:10,
-        paddingVertical:10,
-        borderColor:"#ccc",
-        borderWidth:1,
-        borderRadius:5,
-        width:360,
-        height:40,
-        marginTop:0,
-        position:'absolute',
-        top:25,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        borderColor: "#B3B3B3",
+        borderWidth: 1,
+        borderRadius: 5,
+        width: 360,
+        height: 36,
+        marginTop: 0,
+        position: 'absolute',
+        top: 25,
+        fontSize: 12,
 
     },
-   
+
+    textInput: {
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        borderColor: "#817979",
+        borderWidth: 1,
+        borderRadius: 5,
+        width: 270,
+        height: 30,
+        marginLeft: 5,
+        // position: 'absolute',
+        // top: 25,
+        // fontSize: 12,
+    },
+    textInput1: {
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        borderColor: "#0079D0",
+        backgroundColor: "#F2F2F2",
+        borderWidth: 1,
+        borderRadius: 5,
+        width: 270,
+        height: 30,
+        marginLeft: 5,
+        // position: 'absolute',
+        // top: 25,
+        // fontSize: 12,
+    },
+
     number: {
         Color: '#0079D0',
         fontSize: 30,
@@ -436,7 +528,7 @@ const Styles = StyleSheet.create({
         backgroundColor: '#ffff',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 12,
+        marginTop: 57,
         marginBottom: 1,
         marginHorizontal: 14,
         justifyContent: 'center',
@@ -450,6 +542,27 @@ const Styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 13
     },
+    patientDetails1: {
+        width: 365,
+        height: 50,
+        backgroundColor: '#ffff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+        marginBottom: 1,
+        marginHorizontal: 14,
+        justifyContent: 'center',
+        borderRadius: 5,
+        shadowColor: '#0079D0',
+        shadowOpacity: 0.7,
+        shadowOffset: {
+            width: 10,
+            height: 23,
+        },
+        shadowRadius: 10,
+        elevation: 13
+    },
+
 
     TextStyle: {
         textDecorationLine: 'Underline'

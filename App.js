@@ -9,13 +9,17 @@ import homeScreen from './src/auth/homeScreen';
 import rePassword from './src/auth/rePassword';
 import BookMarks from './src/screens/BookMarks';
 import AllCases from './src/screens/AllCases';
+import PersonalDetails from './src/screens/PersonalDetails';
+
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="AllCases">
+      <Stack.Navigator initialRouteName="PersonalDetails ">
+      <Stack.Screen name="PersonalDetails" component={PersonalDetails} />
+
       <Stack.Screen name="AllCases" component={AllCases} />
       <Stack.Screen name="BookMarks" component={BookMarks} />
       <Stack.Screen name="rePassword" component={rePassword} />
