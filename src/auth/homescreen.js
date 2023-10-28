@@ -5,12 +5,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
 import Icons from 'react-native-vector-icons/MaterialIcons';
+
 // import Iconses from 'react-native-vector-icons/FontAwesome6';
 // import  TabNavigation from './src/auth/TabNavigation';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 // import homeStyle from './src/Styles/homeStyle';
 
+
+const Tab = createBottomTabNavigator()
+
 function homeScreen({ navigation }) {
+  const BottomTabNavigation = () => {
+
 
   return (
     <View style={{ backgroundColor: 'white', flex: 1, }}>
@@ -21,8 +27,10 @@ function homeScreen({ navigation }) {
           color='#0079D0'
         // backgroundColor="#4A99E9"
         >
+          
           <Text style={{ color: 'black', fontSize: 16,  }}> Surgical directory</Text>
-        </Icon>
+          </Icon>
+        
       </View>
 
       <View style={Styles.container} >
@@ -45,7 +53,7 @@ function homeScreen({ navigation }) {
           style={{  position: 'absolute', bottom: 7, left: 92 }}
         />
 
-        <Text style={{  position: 'absolute', bottom: 5, left: 124,fontWeight:'Bold' }} >To</Text>
+        <Text style={{  position: 'absolute', bottom: 5, left: 124,fontWeight: 'bold', }} >To</Text>
        
         <Text style={{  position: 'absolute', bottom: 5, left: 153 }} >06/06/2023</Text>
 
@@ -317,11 +325,82 @@ function homeScreen({ navigation }) {
         />
       </View>
 
+      <View  style={Styles.TextStyle} >
+
+      </View>
+
+      <View>
+
+      <Tab.Navigator >
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? 'home' : 'home-outline'}
+                size={24}
+                color={focused ? COLORS.primary : COLORS.gray2}
+              />
+            )
+          },
+        }}
+      />
+      <Tab.Screen
+        name="My Cases"
+        component={MyCases}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? 'document' : 'document-outline'}
+                size={24}
+                color={focused ? COLORS.primary : COLORS.gray2}
+              />
+            )
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Book Marked"
+        component={BookmarkedCases}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? 'bookmarks' : 'bookmarks-outline'}
+                size={24}
+                color={focused ? COLORS.primary : COLORS.gray2}
+              />
+            )
+          },
+        }}
+      />
+      <Tab.Screen
+        name="All Cases"
+        component={AllCases}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return (
+              <Ionicons
+                name={focused ? 'list' : 'list-outline'}
+                size={24}
+                color={focused ? COLORS.primary : COLORS.gray2}
+              />
+            )
+          },
+        }}
+      />
+    </Tab.Navigator>
+
+    </View>
+
     </View>
 
   );
 
-
+ }
 };
 const Styles = StyleSheet.create({
   container: {
@@ -403,7 +482,13 @@ const Styles = StyleSheet.create({
     },
     shadowRadius: 10,
     elevation: 13
-  }
+  },
+
+    TextStyle: {
+      textDecorationLine: 'Underline'
+    }
+
+  
 
 });
 
