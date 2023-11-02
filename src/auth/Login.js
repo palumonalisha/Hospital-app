@@ -31,7 +31,7 @@ function Login({ navigation }) {
 
   return (
     <View style={authStyle.container}>
-      <Text style={authStyle.header}>Sign In</Text>
+      <Text style={authStyle.header}>Login</Text>
 
       {error && <Text style={authStyle.error}>{error}</Text>}
       <TextInput
@@ -98,7 +98,7 @@ const authStyle = StyleSheet.create({
     width: 260,
     height: 40,
     alignItems: 'center',
-    backgroundColor: '#0079D0',
+    backgroundColor: '#6E1CD5',
     paddingHorizontal: 30,
     paddingVertical: 5,
     borderRadius: 5,

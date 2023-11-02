@@ -1,6 +1,7 @@
 
-import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Modal } from 'react-native';
+
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Modal,Button } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
@@ -11,40 +12,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 function AllCases({ navigation }) {
-
-    // constructor()
-    // {
-    //     super()
-    //     this.state = {
-    //         show: false
-
-    //     }
-
-    // }
-
-
-
-    //     constructor(props)
-    // {
-    //     super(props)
-    //     this.state={
-    //         show:false
-
-    //     }
-
-    // }
-
-    // show=() =>{
-    //     this.setState({show:true})
-
-    // }
-
-    // close=() =>{
-    //     this.setState({show:false})
-    // }
-
-
-    // let{show}=this.state
+    
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
 
@@ -82,7 +51,12 @@ function AllCases({ navigation }) {
                     }}
                 />
             </View>
-            <Text style={{ color: 'black', fontSize: 13, fontWeight: 'bold', position: 'absolute', right: 16, top: 112 }} onPress={() => this.setState({ show: true })} > Advanced Search </Text>
+
+            <TouchableOpacity   onPress={() => setModalVisible(!modalVisible)}>
+            <Text style={{ color: 'black', fontSize: 13, fontWeight: 'bold', position: 'absolute', right: 16, top: 24 }} onClick={() => setModalVisible(!modalVisible)} > Advanced Search </Text>
+            </TouchableOpacity>
+
+            {/* <Button  onPress={() => setModalVisible(!modalVisible)}  style={{ color: 'black', fontSize: 13, fontWeight: 'bold', position: 'absolute', right: 16, top: 112 }}  title=" Advanced Search" />  */}
 
 
             <View style={Styles.patientDetails} >
@@ -377,12 +351,12 @@ function AllCases({ navigation }) {
             <Modal
 
                 transparent={true}
-                visible={this.state.show}
-            // visible={true}
+                visible={modalVisible}
+            
             >
 
                 <View style={{ backgroundColor: "#000000aa", flex: 1 }}>
-                    <View style={{ backgroundColor: "#ffff", margin: 40, padding: 14, borderRadius: 5, marginTop: 120, flex: 1, marginBottom: 5, width: 311, height: 643 }}>
+                    <View style={{ backgroundColor: "#ffff", margin: 40, padding: 14, borderRadius: 5, marginTop: 95, flex: 1, marginBottom: 5, width: 311, height: 643 }}>
                         <Text style={{ fontSize: 14, fontWeight: 'bold' }}> Advance search </Text>
                         <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 5, padding: 5, }}>Name </Text>
                         <TextInput style={Styles.textInput}
@@ -412,25 +386,32 @@ function AllCases({ navigation }) {
                         <TextInput style={Styles.textInput1}
                         />
 
-                        <Text style={{ position: 'absolute', bottom: 45, left: 27, fontWeight: 'bold', fontSize: 14 }} >From</Text>
+
+                        <Text style={{ position: 'absolute', bottom: 69, left: 27, fontWeight: 'bold', fontSize: 14 }} >From</Text>
                         <Icon
                             name="calendar"
                             size={10}
                             color='#0079D0'
                             marginLeft='500'
-                            style={{ position: 'absolute', bottom: 49, left: 122 }}
+                            style={{ position: 'absolute', bottom: 72, left: 122 }}
                         />
 
-                        <Text style={{ position: 'absolute', bottom: 45, left: 154, fontSize: 14, fontWeight: 'bold', }} >To</Text>
+                        <Text style={{ position: 'absolute', bottom: 69, left: 154, fontSize: 14, fontWeight: 'bold', }} >To</Text>
 
                         <Icon
                             name="calendar"
                             size={10}
                             color='#0079D0'
                             marginLeft='500'
-                            style={{ position: 'absolute', bottom: 49, left: 266 }}
+                            style={{ position: 'absolute', bottom: 72, left: 266 }}
                         />
+
+                        <TouchableOpacity style={Styles.submit}  onPress={() => setModalVisible(!modalVisible)}>
+                          <Text style={{ fontSize: 14, color:'#ffff',position: 'absolute', top: 4}}> Submit</Text>
+                        </TouchableOpacity>
                     </View>
+
+                    {/* <Text style={{ fontSize: 12, fontWeight: 'bold', padding: 8, color:'#0079D0',}}> Submit</Text> */}
 
 
                 </View>
@@ -540,7 +521,7 @@ const Styles = StyleSheet.create({
             height: 23,
         },
         shadowRadius: 10,
-        elevation: 13
+        elevation:10
     },
     patientDetails1: {
         width: 365,
@@ -566,7 +547,21 @@ const Styles = StyleSheet.create({
 
     TextStyle: {
         textDecorationLine: 'Underline'
-    }
+    },
+    submit: {
+        width: 100,
+        height: 30,
+        alignItems: 'center',
+        backgroundColor: '#0079D0',
+        // paddingHorizontal: 30,
+        // paddingVertical: 5,
+        borderRadius: 5,
+        borderColor: '#BDBDBD',
+        position:'absolute',
+        bottom: 17, 
+        left: 192
+
+      },
 
 
 

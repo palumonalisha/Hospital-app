@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet,ScrollView, } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Slider from '@react-native-community/slider';
@@ -8,10 +8,14 @@ import Icons from 'react-native-vector-icons/MaterialIcons';
 
 
 
+
 function BookMarks({ navigation }) {
 
     return (
         <View style={{ backgroundColor: 'white', flex: 1, }}>
+             <ScrollView>
+
+            
             <View style={Styles.header} >
                 <Icon
                     name="chevron-left"
@@ -391,7 +395,7 @@ function BookMarks({ navigation }) {
 
             </View>
 
-
+            </ScrollView>
         </View>
 
     );
